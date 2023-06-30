@@ -112,31 +112,84 @@
 
 
 /* content-exp */
+.border{
+    margin: 0 auto;
+    text-align: center;
+
+}
+
+.border::before {
+    content: url(https://i.imgur.com/7KEWdZR.png);
+}
+
+.border::after {
+    content: "";
+    width: 40px;
+    height: 3px;
+    background-color: #888;
+    display: block;
+    margin: 0 auto;
+
+}
 
 .border ul{
+    width: 800px;
     display: flex;
     flex-direction: column;
     align-items: center;
+    position: relative;
+    padding: 10px 0px;
+    margin: 0 auto;
+}
+
+.border ul::before {
+    content: "";
+    width: 2px;
+    background-color: #888;
+    height: 100%;
+    position: absolute;
+    top: 0;
 }
 
 .border ul li{
+    margin: 20px 0px;
+    width: 50%;
+    position: relative;
+}
+
+.li-wrap{
     border: 1px solid #FB56BF;
     border-radius: 5px;
+    margin: 10px 0px;
+    padding: 5px 10px;
+    text-align: left;
+    margin: 0 auto;
+}
+
+/* 單數交錯軸靠起點 */
+.border ul li:nth-child(odd){
+    align-self: flex-start;
+    right: 18px;
+}
+
+/* 雙數交錯軸靠終點 */
+.border ul li:nth-child(even){
+    align-self: flex-end;
+    left: 18px;
 }
 
 
+.border li::before {
+    content: url(https://i.imgur.com/BPXlmNk.png);
+    position: absolute;
+}
 
-
-
-
-
-
-
-
-
-
-
-
+.border li:nth-child(even)::before {
+    left: -30px;
+}
+.border li:nth-child(odd)::before {
+    right: -30px;
+}
 
 
 /* content-works */
